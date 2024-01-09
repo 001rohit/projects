@@ -1,0 +1,113 @@
+*{
+  /* border: 3px solid red; */
+}
+body{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+}
+.App {
+  height: auto;
+  background: gray;
+  width: 500px;
+  text-align: center;
+  overflow: hidden;
+
+}
+
+h1{
+  color:brown;
+  margin:20px 0;
+  padding: 10px 0;
+  background: black;
+  width: 100%;
+}
+input{
+  padding: 10px ;
+  width: 200px;
+  margin: 0 7px;
+}
+.Btn{
+  padding: 5px;
+  margin: 10px 0;
+  font-weight:bold;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+.list{
+width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin:10px 0;
+  padding: 7px 0;
+  /* border: 1px solid white; */
+  background: black;
+  
+}
+.list p span{
+  color: brown;
+}
+.list-content{
+  width: 100%;
+  /* border: 1px solid white; */
+  /* text-align: center; */
+  margin: 0 10px;
+  padding: 5px;
+background: #fff;
+}
+.list-content h2{
+  text-transform: uppercase;
+  text-align: center;
+  color: brown;
+  margin: 5px 0;
+  background: sandybrown;
+
+}
+.list-content p{
+font-weight: bold;
+  margin: 0;
+  float: left;
+}
+.list button{
+  width: 100px;
+  text-align: center;
+  padding: 20px ;
+  border-radius:50px;
+  text-align: center;
+  margin:  5px 10px;
+  align-items: center;
+  justify-content: start;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: capitalize;
+  border: none;
+}
+@media screen and (max-width: 600px){
+  .App{
+   width: 100%;
+   padding: 0 10px;
+   background: #000;
+  }
+  input{
+    margin: 5px;
+    width: 90%;
+    margin: 5px 0;
+  }
+}
+.sub{
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.sub p{
+  /* width: 100px; */
+  padding: 5px;
+  color: #fff;
+}
