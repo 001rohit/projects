@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <input type="checkbox" id="subscribe">
+       <label for="subscribe">subscribe</label>
+           <br><br><br>
+        <input type="radio" id="visa" name="card">
+          <label for="visa">Visa</label>
+          <br>
+          <input type="radio" id="master" name="card">
+          <label for="master">Master</label>
+          <br>
+          <input type="radio" id="paypal" name="card">
+          <label for="paypal">paypal</label>
+          <br><br>
+          <button id="submit">Submit</button>
+          <br>
+          <p id="subResult"></p>
+          <p id="paymentResult"></p>
+
+            <script>
+                const subscribe = document.getElementById("subscribe")
+                const visa = document.getElementById("visa")
+                const master = document.getElementById("master")
+                const paypal = document.getElementById("paypal")
+                const submit = document.getElementById("submit")
+                const subResult = document.getElementById("subResult")
+                const paymentResult = document.getElementById("paymentResult")
+              
+                submit.onclick = function(){
+
+                    if(subscribe.checked){
+                        subResult.textContent = `You are subscribe`
+                    }
+                    else{
+                        subResult.textContent = `You are not subscribe`
+                    }
+
+                    if(visa.checked){
+                        paymentResult.textContent = `You are selecte  Visa payment option`
+                    }
+                    
+                    else if(master.checked){
+                        paymentResult.textContent = `You are selecte master payment option`
+                    }
+                   else if(paypal.checked){
+                        paymentResult.textContent = `You are selecte paypal payment option`
+                    }
+                    else{
+                        paymentResult.textContent = `You are not selected any option `
+                    }
+                    
+                }
+                console.log("hellow")
+            </script>
+        </body>
+</html>
