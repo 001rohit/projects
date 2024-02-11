@@ -1,0 +1,26 @@
+#count1{
+    display: block;
+    text-align: center;
+    color: red;
+    font-size:10rem;
+}
+.btn-box{
+    text-align: center;
+}
+button{
+    background: lime;
+    padding: 7px 10px;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.5s;
+    font-weight:bold;
+    cursor:pointer;
+    width:200px;
+    height: 50px;
+    font-size:20px;
+    color:brown;
+}
+button:hover{
+    background: black;
+    color: white;
+}
