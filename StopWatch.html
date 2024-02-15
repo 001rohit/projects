@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            margin: 0;
+            background: #000;
+        }
+        #myh1{
+            font-size:5rem;
+            margin: 15px 0;
+            color: red;
+            text-transform: uppercase;
+        }
+       .box{
+        padding: 20px;
+        text-align: center;
+        /* margin: 10px; */
+        border: 5px solid rgb(119, 115, 115);
+         border-radius: 18px;
+       }
+       #display{
+        font-size: 8rem;
+       color: white;
+ 
+       }
+       #controls button{
+        font-size:25px;
+        padding: 20px;
+        border-radius: 10px;
+        cursor:pointer;
+         margin:0 15px;
+         color: white;
+         border: none;
+         transition: color 0.5s ease-in;
+        }
+        #controls button:hover{
+            color:red;
+        }
+        #controls #startBtn{
+           background: violet;
+           transition: background-color 0.5s ease-in-out;
+       }
+       #controls #startBtn:hover{
+        background-color: rgb(236, 192, 236);
+    }
+    #controls #stopBtn{
+           background: limegreen;
+           transition: background-color 0.5s ease-in-out;
+
+       }
+       #controls #stopBtn:hover{
+        background-color:lime;
+    }
+    #controls #resetBtn{
+           background: orange;
+           transition: background-color 0.5s ease-in-out;
+
+       }
+       #controls #resetBtn:hover{
+        background-color:rgb(247, 180, 58);
+    }
+
+    </style>
+</head>
+<body>
+     <h1 id="myh1">Stopwatch</h1>
+    <div class="box">
+           <div id="display">
+            00:00:00:00
+           </div>
+           <div id="controls">
+            <button id="startBtn" onclick="start()">Start</button>
+            <button id="stopBtn" onclick="stop()">Stop</button>
+            <button id="resetBtn" onclick="reset()">Reset</button>
+        </div>
+        </div>
+        <script>
+            let display = document.getElementById("display");
+            let timer = null;
+            let startTime = 0;
+            let elapsedTime = 0;
+            let isRunning = false;
+
+            function start(){
+               if(!isRunning){
+                    startTime = Date.now() - elapsedTime;
+                    timer = setInterval(update,10);
+                    isRunning = true;
+               }
+            }
+            function update(){
+                const currenTime = Date.now();
+                elapsedTime = currenTime - startTime;
+
+                let hours = Math.floor(elapsedTime/(1000*60*60));
+                 let minute = Math.floor(elapsedTime/(1000*60)%60);
+                 let seconds = Math.floor(elapsedTime/1000%60);
+                 let miliseconds = Math.floor(elapsedTime%100/10);
+
+                 hours = String(hours).padStart(2,"0");
+                 minute = String(minute).padStart(2,"0");
+                 seconds = String(seconds).padStart(2,"0");
+                 miliseconds = String(miliseconds).padStart(2,"0");
+                 display.textContent = `${hours}:${minute}:${seconds}:${miliseconds}`;
+            }
+            function stop(){
+                if(isRunning){
+                       clearInterval(timer);
+                       elapsedTime = Date.now() - startTime;
+                       isRunning = false;
+                }
+            }
+            function reset(){
+                clearInterval(timer);
+                startTime = 0; 
+                elapsedTime = 0;
+              isRunning = false;
+
+              display.textContent = "00:00:00:00"
+            }
+        </script>
+</body>
+</html>
