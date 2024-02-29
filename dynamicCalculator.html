@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height:100vh;
+        }
+        button{
+            width:30px;
+            padding:  10px 0;
+            margin:5px 0;
+            font-size: 20px;
+            border: none;
+             cursor: pointer;
+        }
+        button:active{
+            transform: scaleX(.90);
+        }
+        
+        button:nth-child(1){
+            background: orange;
+        }
+        button:nth-child(2){
+            background: brown;
+        }
+        button:nth-child(3){
+            background: lime;
+        }
+        button:nth-child(4){
+            background: cyan;
+        }
+
+
+    </style>
+</head>
+<body>
+       <!-- <input type="text" id="input"> -->
+       <h1>My Dynamic Calcalutor</h1>
+       <div class="btn">
+        <button onclick="sum()">+</button>
+        <button onclick="sub()">-</button>
+        <button onclick="multi()">*</button>
+        <button onclick="devi()">/</button>
+        <!-- <button>=</button> -->
+       </div>
+       
+    <div id="result"></div>
+
+    <script>
+                 var result = document.getElementById("result")
+            function sum(){
+                let a = parseInt(prompt("Enter first number: "))
+                let b = parseInt(prompt("Enter second number: "))
+                let res = a+b
+                result.innerHTML = `Sum ${a} + ${b} number is ${res}`
+            } 
+            function sub(){
+                let a = parseInt(prompt("Enter first number: "))
+                let b = parseInt(prompt("Enter second number: "))
+              let  res = a-b
+                result.innerHTML = `Substraction ${a} - ${b} number is ${res}`
+            } 
+            function multi(){
+                let a = parseInt(prompt("Enter first number: "))
+                let b = parseInt(prompt("Enter second number: "))
+             let   res = a*b
+                result.innerHTML = `Sum ${a} and ${b} number is ${res}`
+            } 
+            function devi(){
+                let a = parseInt(prompt("Enter first number: "))
+                let b = parseInt(prompt("Enter second number: "))
+                let res = a/b
+                result.innerHTML = `Division ${a} / ${b} number is ${res}`
+            } 
+
+        
+            // a = Number(a)
+            // b = Number(b)
+            // let res = sum(a,b)
+            // result.innerHTML = `Sum ${a} and ${b} number is ${res}`
+
+          
+    </script>
+</body>
+</html>
